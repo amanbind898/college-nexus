@@ -25,16 +25,16 @@ html {
 	scroll-behavior: smooth;
 	font-size: 62.5%
 }
-
+ul, a{
+  list-style: none;
+  text-decoration: none;
+/* }
 @media only screen and (width<=75em) {
 	html {
 		font-size: 59%
 	}
 }
-ul, a{
-  list-style: none;
-  text-decoration: none;
-}
+
 @media only screen and (width<=56.25em) {
 	html {
 		font-size: 56%
@@ -44,7 +44,7 @@ ul, a{
 @media only screen and (width>=112.5em) {
 	html {
 		font-size: 65%
-	}
+	} */
 }
   .container {
     max-width: 960px;
@@ -229,16 +229,6 @@ ul, a{
   }
   
   
-  #hero {
-    text-align: center;
-    padding: 100px 0;
-    background-color: #fff;
-  }
-  
-  #hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
   
   .btn {
     text-decoration: none;
