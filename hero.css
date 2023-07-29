@@ -1,17 +1,4 @@
 /* Header */
-#hero {
-    text-align: center;
-    padding: 100px 0;
-    background-color: #fff;
-  }
-  
-  #hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .herocontainer{
-    z-index: 999;
-  }
 .large-header {
 	position: relative;
 	width: 100%;
@@ -27,29 +14,40 @@
 }
 
 .main-title {
+	width: 70rem;
+	font-family: 'Rowdies', cursive;
 	position: absolute;
 	margin: 0;
-	padding: 0;
-	color: #e8cfb6;
+	padding: 5px;
+font-weight: 300;
+	color: #ebe1d6;
 	text-align: center;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate3d(-50%,-50%,0);
 	transform: translate3d(-50%,-50%,0);
+	user-select: none;
 }
 
-.demo-1 .main-title {	font-size: 4.2em;
-	letter-spacing: 0.1em;
-}
-
- .thin {
-color: aqua;
-	font-weight: lighter;
-}
+.hero-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fddd60;
+    color: #0f0f0d;
+    border-radius: 10px;
+	transition: ease-in 0.5s;
+  }
+  .hero-btn:hover{
+    color: #bbbb6a;
+    background-color: #574848;
+	transition: ease 0.4s;
+  }
 
 @media only screen and (max-width : 768px) {
-	.demo-1 .main-title {
-		font-size: 3em;
+	.main-title {
+		width: 50rem;
+		font-size: 1.2em;
 	}
 }
 

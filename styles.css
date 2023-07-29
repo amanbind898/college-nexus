@@ -28,7 +28,7 @@ html {
 ul, a{
   list-style: none;
   text-decoration: none;
-/* }
+}
 @media only screen and (width<=75em) {
 	html {
 		font-size: 59%
@@ -44,7 +44,7 @@ ul, a{
 @media only screen and (width>=112.5em) {
 	html {
 		font-size: 65%
-	} */
+	}
 }
   .container {
     max-width: 960px;
@@ -62,7 +62,7 @@ ul, a{
   
   .navbar {
     z-index: 1000;
-    background: #DA0037;
+    background: #fddd60;
     width: 100%;
     position: fixed;
     top: 0;
@@ -140,18 +140,23 @@ ul, a{
   
   .header-link {
     color: #171717;
-    text-transform: uppercase;
+    
     letter-spacing: 1px;
-    padding: 2.2rem 3rem;
+    padding: 1.1rem 1.5rem;
+    margin: 1.0rem 1.5rem;
     font-size: 1.6rem;
     font-weight: 700;
-    transition: color .3s;
-    display: inline-block
+    display: inline-block;
   }
   
  .header-link:hover {
-    color: #EDEDED;
-  }
+    color: #3b3510;
+
+    border-radius: 10px;
+    background-color: rgb(239, 234, 204);
+
+   
+ }
   
   @media only screen and (width<=56.25em) {
     .header-link {
