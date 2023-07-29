@@ -46,7 +46,7 @@ font-weight: 300;
 
 @media only screen and (max-width : 768px) {
 	.main-title {
-		width: 50rem;
+		width: 18em;
 		font-size: 1.2em;
 	}
 }
