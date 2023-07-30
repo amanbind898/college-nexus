@@ -24,3 +24,15 @@ c.addEventListener("click", ()=>{
 );
 
 ;
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  var navbar = document.getElementsByClassName("navbar")[0];
+  if (prevScrollpos > currentScrollPos) {
+    navbar.style.top = "0";
+  } else {
+    navbar.style.top = "-90px";
+  }
+  prevScrollpos = currentScrollPos;
+};
