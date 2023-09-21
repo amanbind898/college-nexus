@@ -137,7 +137,10 @@ ul, a{
       display: none
     }
   }
-  
+  .logincolor{
+    background-color: #bc8b3b;
+    border-radius: 10px;;
+  }
   .header-link {
     color: #171717;
     
