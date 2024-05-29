@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 let collegeData = [];
 
 // Load data from CSV
-fs.createReadStream('college predictor\\college_data.csv')
+fs.createReadStream('college_data.csv')
   .pipe(csv())
   .on('data', (row) => {
     collegeData.push(row);
