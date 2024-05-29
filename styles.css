@@ -1,7 +1,7 @@
 /* color scheme 
 red #DA0037
 whitish grey #EDEDED
-dark gey #444444
+dark grey #444444
 black #171717  */
 /* Reset default browser styles */
 * {
@@ -47,6 +47,15 @@ ul, a{
 	}
 }
   .container {
+    
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .containerabout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
@@ -307,3 +316,37 @@ ul, a{
     text-align: center;
   }
   
+/* banner code */
+.banner {
+  background-color: #fddd60;
+  color: rgb(28, 11, 11);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+.banner-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.banner-button {
+  background-color: #0073ff;
+  color: #e9eff4;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.banner-button:hover {
+  background-color: #ff9900;
+}

@@ -16,7 +16,7 @@ fs.createReadStream('college_data.csv')
   })
   .on('end', () => {
     console.log('CSV file successfully processed');
-    console.log('Loaded college data:', collegeData);  // Debug statement
+    console.log('Loaded college data:', collegeData); 
   });
 
 // Middleware to parse JSON bodies
@@ -40,7 +40,7 @@ app.post('/predict', (req, res) => {
   const eligibleColleges = collegeData.filter(college => {
     const openingRank = parseInt(college['Opening Rank']);
     const closingRank = parseInt(college['Closing Rank']);
-    console.log(`College: ${college['Institute']}, Opening Rank: ${openingRank}, Closing Rank: ${closingRank}`);  // Debug statement
+    // console.log(`College: ${college['Institute']}, Opening Rank: ${openingRank}, Closing Rank: ${closingRank}`);  // Debug statement
     return rank >= openingRank && rank <= closingRank;
   });
 
