@@ -1,0 +1,54 @@
+/* color scheme 
+red #DA0037
+whitish grey #EDEDED
+dark gey #444444
+black #171717  */
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	line-height: 1.5;
+	position: relative;
+	
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input {
+    margin-bottom: 12px;
+}
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+p {
+    margin: auto 0;
+   border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
