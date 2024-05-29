@@ -3,7 +3,7 @@ console.log("script started");
 function predictCollege() {
     const rank = document.getElementById('rank').value;
 
-    fetch('http://localhost:3000/predict', {
+    fetch('https://college-nexus-lxtq.onrender.com/predict', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
