@@ -56,3 +56,26 @@ function predictCollege() {
         alert('Error fetching data');
     });
 }
+
+const printButtonContainer = document.getElementById('printButtonContainer');
+if (!document.getElementById('printButton')) {
+    const printButton = document.createElement('button');
+    printButton.id = 'printButton';
+    printButton.textContent = 'Print Results';
+    printButton.onclick = printResults;
+    printButtonContainer.appendChild(printButton);
+}
+
+
+function printResults() {
+const originalContents = document.body.innerHTML;
+const printContents = document.querySelector('.navbar').outerHTML +
+                      document.querySelector('.container').outerHTML +
+                      document.querySelector('.form-container').outerHTML +
+                      document.getElementById('results').outerHTML;
+document.body.innerHTML = printContents;
+window.print();
+document.body.innerHTML = originalContents;
+location.reload();
+}
+

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEE Main College Predictor</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -42,7 +43,10 @@
                 <option value="ST-PwD">ST-PwD</option>
             </select><br><br>
             <button type="button" onclick="predictCollege()">Predict College</button>
+            <br>
+            <div id="printButtonContainer"></div>
         </form>
+      
     </div>
 
     <div id="spinner" class="spinner">
@@ -54,7 +58,7 @@
     <ul id="results"></ul>
 
     <div class="footer">
-        &copy; 2024 CollegeNexus by Aman Bind. All rights reserved.
+        &copy; 2024 CollegeNexus by Aman Bind.<br> All rights reserved.
     </div>
 
     <script src="script.js"></script>
