@@ -10,47 +10,53 @@
     </div>
 
     <div class="container">
-        <p id="intro">Enter your JEE Main All India Rank (AIR) to predict the colleges you can get into.<br>
-        The data used in this is first round of joint seat allocation authority (JoSAA) counselling for the year 2023.<br>
-        The data is taken from the official JoSAA website and is for general category students only. The data is not guaranteed to be accurate.</p>
-        <p>Only National Institute of Technology(NITs) data is added at present.  </p>
-        <div class="form-container">
-            <form id="predictForm">
-                <label for="rank">Enter Your AIR: </label>
-                <input type="number" id="rank" name="rank" required>
-               <br><br>
-                <label for="gender">Gender: </label>
-                <select id="gender" name="gender" required>
-                    <option value="Gender-Neutral">Male</option>
-                    <option value="Female-only (including Supernumerary)">Female</option>
-                </select><br><br>
-                <label for="seatType">Seat Type: </label>
-                <select id="seatType" name="seatType" required>
-                    <option value="OPEN">OPEN</option>
-                    <option value="Open-PwD">Open-PwD</option>
-                    <option value="OBC-NCL">OBC-NCL</option>
-                    <option value="OBC-NCL-PwD">OBC-NCL-PwD</option>
-                    <option value="SC">SC</option>
-                    <option value="SC-PwD">SC-PwD</option>
-                    <option value="ST">ST</option>
-                    <option value="ST-PwD">ST-PwD</option>
-                </select><br><br>
-                <button type="button" onclick="predictCollege()">Predict College</button>
-            </form>
-        </div>
+        <p>
+            Enter your JEE Main All India Rank (AIR) to list potential colleges.
+        </p>
+        <ul>
+            <li>Uses first round JoSAA counselling data from 2023.</li>
+            <li>Currently includes data for <strong> National Institutes of Technology (NITs) OPEN category</strong> students only.</li>
+            <li>Sourced from the official JoSAA website.</li>
+        </ul>
     </div>
 
-    <div id="spinner" style="display: none;">
-        <img src="/loading.gif" alt="Loading..."> Loading...
+    <div class="form-container">
+        <form id="predictForm">
+            <label for="rank">Enter Your AIR: </label>
+            <input type="number" id="rank" name="rank" placeholder="CRL rank">
+            <br><br>
+            <label for="gender">Gender: </label>
+            <select id="gender" name="gender" required>
+                <option value="Gender-Neutral">Male (Gender-Neutral)</option>
+                <option value="Female-only (including Supernumerary)">Female</option>
+            </select><br><br>
+            <label for="seatType">Seat Type: </label>
+            <select id="seatType" name="seatType" required>
+                <option value="OPEN">OPEN</option>
+                <option value="Open-PwD">Open-PwD</option>
+                <option value="OBC-NCL">OBC-NCL</option>
+                <option value="OBC-NCL-PwD">OBC-NCL-PwD</option>
+                <option value="SC">SC</option>
+                <option value="SC-PwD">SC-PwD</option>
+                <option value="ST">ST</option>
+                <option value="ST-PwD">ST-PwD</option>
+            </select><br><br>
+            <button type="button" onclick="predictCollege()">Predict College</button>
+        </form>
     </div>
-  
+
+    <div id="spinner" class="spinner">
+        Loading...  <img src="/loading.gif" alt="Loading...">
+    </div>
+
     <h2 id="eligibleCount"></h2>
     <h2>Eligible Colleges: (NITs)</h2>
     <ul id="results"></ul>
-    <script src="script.js"></script>
 
     <div class="footer">
-      &copy; 2024  CollegeNexus by Aman Bind. All rights reserved.
+        &copy; 2024 CollegeNexus by Aman Bind. All rights reserved.
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

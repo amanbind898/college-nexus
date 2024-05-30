@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +9,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #EDEDED;
     color: #171717;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -30,9 +35,35 @@ body {
     max-width: 960px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fddd60;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* for device width 320px */
+@media (max-width: 768px) { 
+   
+    .form-container {
+        margin-top: 0;
+        padding: 20px;
+        background-color: #fddd60;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input,
+    select {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
 }
 
 p {
@@ -48,15 +79,17 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    padding: 20px;
 }
 
 form {
-    display: flex;
+    display: grid;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
     width: 100%;
     max-width: 400px;
+  
 }
 
 label {
@@ -89,12 +122,12 @@ button:hover {
     background-color: #0056b3;
 }
 
-ul {
+#results ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+#results li {
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
@@ -111,9 +144,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    bottom: 0;
-    left: 0;
+    margin-top: auto;
 }
 
 .footer p {
@@ -122,24 +153,21 @@ li {
     font-size: 0.8rem;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    #intro {
-        font-size: 0.8rem;
-    }
-
-    form {
-        width: 90%;
-    }
-
-    input,
-    select {
-        padding: 15px;
-        font-size: 1.2rem;
-    }
-
-    button {
-        padding: 15px 20px;
-        font-size: 1.2rem;
-    }
+.spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
+.spinner img {
+    width: 20px;
+    height: 20px;
+}
+
+
