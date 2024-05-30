@@ -2,13 +2,22 @@ console.log("script started");
 
 function predictCollege() {
     const rank = document.getElementById('rank').value;
+    const gender = document.getElementById('gender').value;
+    const seatType = document.getElementById('seatType').value;
+
+    if (!rank || !gender || !seatType) {
+        alert("Please fill out all fields");
+        return;
+    }
+
+    document.getElementById('spinner').style.display = 'block';
 
     fetch('https://college-nexus-lxtq.onrender.com/predict', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ rank: rank })
+        body: JSON.stringify({ rank: rank, gender: gender, seatType: seatType })
     })
     .then(response => {
         if (!response.ok) {
@@ -18,11 +27,15 @@ function predictCollege() {
     })
     .then(data => {
         const results = document.getElementById('results');
+        const eligibleCount = document.getElementById('eligibleCount');
         results.innerHTML = '';
+        eligibleCount.innerHTML = '';
+        document.getElementById('spinner').style.display = 'none';
 
         if (data.eligibleColleges.length === 0) {
-            results.innerHTML = '<li>No eligible colleges found for the given rank.</li>';
+            eligibleCount.innerHTML = 'No eligible colleges found for the given rank.';
         } else {
+            eligibleCount.innerHTML = `${data.eligibleColleges.length} eligible options found:`;
             data.eligibleColleges.forEach(college => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
@@ -38,6 +51,8 @@ function predictCollege() {
         }
     })
     .catch(error => {
+        document.getElementById('spinner').style.display = 'none';
         console.error('Error:', error);
+        alert('Error fetching data');
     });
 }

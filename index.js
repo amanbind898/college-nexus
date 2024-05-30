@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3000;
 
 let collegeData = [];
 
-// Load data from CSV
 fs.createReadStream('college_data.csv')
   .pipe(csv())
   .on('data', (row) => {
@@ -16,40 +15,36 @@ fs.createReadStream('college_data.csv')
   })
   .on('end', () => {
     console.log('CSV file successfully processed');
-    console.log('Loaded college data:', collegeData); 
+    console.log('Loaded college data:', collegeData);
   });
 
-// Middleware to parse JSON bodies
 app.use(express.json());
-
-// Middleware to serve static files
 app.use(express.static('public'));
-
-// Middleware to enable CORS
 app.use(cors());
 
-// Endpoint to predict colleges
 app.post('/predict', (req, res) => {
-  const { rank } = req.body;
-  console.log('Received rank:', rank);  // Debug statement
+  const { rank, category, gender, seatType } = req.body;
+  console.log('Received data:', { rank, category, gender, seatType });
 
-  if (!rank) {
-    return res.status(400).json({ error: 'Rank is required' });
+  if (!rank || !category || !gender || !seatType) {
+    return res.status(400).json({ error: 'All fields are required' });
   }
 
   const eligibleColleges = collegeData.filter(college => {
     const openingRank = parseInt(college['Opening Rank']);
     const closingRank = parseInt(college['Closing Rank']);
-    // console.log(`College: ${college['Institute']}, Opening Rank: ${openingRank}, Closing Rank: ${closingRank}`);  // Debug statement
-    return rank >= openingRank && rank <= closingRank;
+    return (
+      rank >= openingRank &&
+      rank <= closingRank &&
+      college['Category'] === category &&
+      college['Gender'] === gender &&
+      college['Seat Type'] === seatType
+    );
   });
-
- // console.log('Eligible colleges:', eligibleColleges);  // Debug statement
 
   res.json({ eligibleColleges });
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

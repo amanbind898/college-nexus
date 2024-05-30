@@ -62,10 +62,13 @@ form {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #444444;
+    color: #0b0000;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-input {
+input,
+select {
     margin-bottom: 12px;
     padding: 10px;
     width: 100%;
@@ -108,7 +111,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
 }
@@ -117,4 +120,26 @@ li {
     background-color: #fddd60;
     color: #190808;
     font-size: 0.8rem;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #intro {
+        font-size: 0.8rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input,
+    select {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 15px 20px;
+        font-size: 1.2rem;
+    }
 }

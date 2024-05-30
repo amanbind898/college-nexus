@@ -6,31 +6,51 @@
 </head>
 <body>
     <div class="navbar">
-        <h1>CollegeNexus : College Predictor</h1>
+        <h1>CollegeNexus : College Predictor 2024</h1>
     </div>
 
     <div class="container">
-        <p>Enter your JEE Main All India Rank (AIR) to predict the colleges you can get into.<br>
+        <p id="intro">Enter your JEE Main All India Rank (AIR) to predict the colleges you can get into.<br>
         The data used in this is first round of joint seat allocation authority (JoSAA) counselling for the year 2023.<br>
         The data is taken from the official JoSAA website and is for general category students only. The data is not guaranteed to be accurate.</p>
-        <p>Only National Institute of Technlogy(NITs) data is added at present.  </p>
+        <p>Only National Institute of Technology(NITs) data is added at present.  </p>
         <div class="form-container">
             <form id="predictForm">
                 <label for="rank">Enter Your AIR: </label>
-                <input type="number" id="rank" name="rank" required><br><br>
-                <label for="category"> seat type: OPEN  </label>
+                <input type="number" id="rank" name="rank" required>
+               <br><br>
+                <label for="gender">Gender: </label>
+                <select id="gender" name="gender" required>
+                    <option value="Gender-Neutral">Male</option>
+                    <option value="Female">Female</option>
+                </select><br><br>
+                <label for="seatType">Seat Type: </label>
+                <select id="seatType" name="seatType" required>
+                    <option value="Open">Open</option>
+                    <option value="Open-PwD">Open-PwD</option>
+                    <option value="OBC-NCL">OBC-NCL</option>
+                    <option value="OBC-NCL-PwD">OBC-NCL-PwD</option>
+                    <option value="SC">SC</option>
+                    <option value="SC-PwD">SC-PwD</option>
+                    <option value="ST">ST</option>
+                    <option value="ST-PwD">ST-PwD</option>
+                </select><br><br>
                 <button type="button" onclick="predictCollege()">Predict College</button>
             </form>
         </div>
     </div>
+
+    <div id="spinner" style="display: none;">
+        <img src="/loading.gif" alt="Loading...">
+    </div>
   
+    <h2 id="eligibleCount"></h2>
     <h2>Eligible Colleges: (NITs)</h2>
     <ul id="results"></ul>
-    <script src="script.js"></script> <!-- Script tag moved here -->
+    <script src="script.js"></script>
 
     <div class="footer">
-        <p>&copy; 2024  CollegeNexus by Aman Bind. All rights reserved.</p>
+      &copy; 2024  CollegeNexus by Aman Bind. All rights reserved.
     </div>
 </body>
 </html>
-
