@@ -24,25 +24,20 @@ app.use(cors());
 
 app.post('/predict', (req, res) => {
   const { rank, gender, seatType } = req.body;
-  console.log('Received data:', { rank, gender, seatType });
+  console.log('Received data:', { rank,gender, seatType });
 
   if (!rank || !gender || !seatType) {
     return res.status(400).json({ error: 'All fields are required' });
-  }
-
-  const parsedRank = parseInt(rank);
-  if (isNaN(parsedRank)) {
-    return res.status(400).json({ error: 'Rank must be a number' });
   }
 
   const eligibleColleges = collegeData.filter(college => {
     const openingRank = parseInt(college['Opening Rank']);
     const closingRank = parseInt(college['Closing Rank']);
     return (
-      parsedRank >= openingRank &&
-      parsedRank <= closingRank &&
-      college['Gender'].toLowerCase() === gender.toLowerCase() &&
-      college['Seat Type'].toLowerCase() === seatType.toLowerCase()
+      rank >= openingRank &&
+      rank <= closingRank &&
+      college['Gender'] === gender &&
+      college['Seat Type'] === seatType
     );
   });
 
