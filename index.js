@@ -23,7 +23,7 @@ app.use(express.static('public'));
 app.use(cors());
 
 app.post('/predict', (req, res) => {
-  const { rank, category, gender, seatType } = req.body;
+  const { rank, gender, seatType } = req.body;
   console.log('Received data:', { rank, category, gender, seatType });
 
   if (!rank || !category || !gender || !seatType) {
@@ -36,7 +36,6 @@ app.post('/predict', (req, res) => {
     return (
       rank >= openingRank &&
       rank <= closingRank &&
-      college['Category'] === category &&
       college['Gender'] === gender &&
       college['Seat Type'] === seatType
     );
