@@ -26,7 +26,7 @@ app.post('/predict', (req, res) => {
   const { rank, gender, seatType } = req.body;
   console.log('Received data:', { rank, category, gender, seatType });
 
-  if (!rank || !category || !gender || !seatType) {
+  if (!rank || !gender || !seatType) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
