@@ -28,6 +28,7 @@ fs.createReadStream('NIT.csv')
         ...cleanedRow,
         'Opening Rank': openingRank,
         'Closing Rank': closingRank,
+        'Institute Type': cleanedRow['Institute Type'].trim().toUpperCase(),  // Ensure consistent casing
       });
     } else {
       console.error(`Invalid rank data: ${JSON.stringify(cleanedRow)}`);
@@ -46,24 +47,39 @@ app.use(express.static('public'));
 app.use(cors());
 
 app.post('/predict', (req, res) => {
-  const { rank, gender, seatType ,collegeType} = req.body;
-  console.log('Received data:', { rank, seatType ,collegeType , gender});
+  const { rank, gender, seatType, collegeType } = req.body;
+  console.log('Received data:', { rank, seatType, collegeType, gender });
 
-  if (!rank || !gender || !seatType) {
+  if (!rank || !gender || !seatType || !collegeType) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
   const rankInt = parseInt(rank);
+  const cleanedCollegeType = collegeType.trim().toUpperCase();
+
+  console.log('Cleaned College Type:', cleanedCollegeType);
 
   const eligibleColleges = collegeData.filter(college => {
     const openingRank = college['Opening Rank'];
     const closingRank = college['Closing Rank'];
+    const instituteType = college['Institute Type'].trim().toUpperCase();
+
+    console.log('Comparing:', {
+      rankInt,
+      openingRank,
+      closingRank,
+      gender: college['Gender'],
+      seatType: college['Seat Type'],
+      instituteType,
+      cleanedCollegeType
+    });
+
     return (
       rankInt >= openingRank &&
       rankInt <= closingRank &&
       college['Gender'] === gender &&
       college['Seat Type'] === seatType &&
-      college['Institute Type'] === collegeType
+      instituteType === cleanedCollegeType
     );
   });
 
