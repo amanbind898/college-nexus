@@ -1,3 +1,4 @@
+/* Existing CSS */
 /* font import poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 * {
@@ -106,13 +107,11 @@ button:hover {
     background-color: #f9f9f9;
 }
 
-
 .spinner {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
-   
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -129,9 +128,6 @@ button:hover {
     background-color: #1E2A38;
     color: white;
     text-align: center;
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
 }
 
 @media (max-width: 768px) {
@@ -158,3 +154,47 @@ button:hover {
         font-size: 1.2rem;
     }
 }
+
+/* FAQ and Instructions */
+.faq-instructions {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 960px;
+}
+
+.faq h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    background-color: #fddd60;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* JavaScript to toggle FAQ answers */
+.faq-question.active + .faq-answer {
+    display: block;
+}
+

@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 let collegeData = [];
 
 // Load data from CSV with cleaning and validation
-fs.createReadStream('college_data.csv')
+fs.createReadStream('NIT.csv')
   .pipe(csv())
   .on('data', (row) => {
     // Clean up the row by removing extra spaces and quotes
@@ -47,7 +47,7 @@ app.use(cors());
 
 app.post('/predict', (req, res) => {
   const { rank, gender, seatType } = req.body;
-  console.log('Received data:', { rank, gender, seatType });
+  console.log('Received data:', { rank, seatType,collegeType, gender});
 
   if (!rank || !gender || !seatType) {
     return res.status(400).json({ error: 'All fields are required' });
@@ -62,7 +62,8 @@ app.post('/predict', (req, res) => {
       rankInt >= openingRank &&
       rankInt <= closingRank &&
       college['Gender'] === gender &&
-      college['Seat Type'] === seatType
+      college['Seat Type'] === seatType &&
+      college['Institute Type'] === collegeType
     );
   });
 

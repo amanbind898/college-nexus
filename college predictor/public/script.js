@@ -1,4 +1,19 @@
 console.log("script started");
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-question');
+
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        });
+    });
+});
 
 function predictCollege() {
     const rank = document.getElementById('rank').value;
@@ -20,7 +35,7 @@ function predictCollege() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ rank, seatType, gender })
+        body: JSON.stringify({ rank, seatType,collegeType, gender })
         // body: JSON.stringify({ rank, category, collegeType, gender })
     })
     .then(response => {
@@ -61,14 +76,7 @@ function predictCollege() {
     });
 }
 
-const printButtonContainer = document.getElementById('printButtonContainer');
-if (!document.getElementById('printButton')) {
-    const printButton = document.createElement('button');
-    printButton.id = 'printButton';
-    printButton.textContent = 'Print Results';
-    printButton.onclick = printResults;
-    printButtonContainer.appendChild(printButton);
-}
+
 
 function printResults() {
     const originalContents = document.body.innerHTML;
