@@ -2,10 +2,13 @@ console.log("script started");
 
 function predictCollege() {
     const rank = document.getElementById('rank').value;
-    const gender = document.getElementById('gender').value;
     const seatType = document.getElementById('seatType').value;
+    // const branch = document.getElementById('branch').value;
+    // const state = document.getElementById('state').value;
+    const collegeType = document.getElementById('collegeType').value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
 
-    if (!rank || !gender || !seatType) {
+    if (!rank || !seatType|| !collegeType || !gender) {
         alert("Please fill out all fields");
         return;
     }
@@ -17,7 +20,8 @@ function predictCollege() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ rank: rank, gender: gender, seatType: seatType })
+        body: JSON.stringify({ rank, seatType, gender })
+        // body: JSON.stringify({ rank, category, collegeType, gender })
     })
     .then(response => {
         if (!response.ok) {
@@ -66,16 +70,13 @@ if (!document.getElementById('printButton')) {
     printButtonContainer.appendChild(printButton);
 }
 
-
 function printResults() {
-const originalContents = document.body.innerHTML;
-const printContents = document.querySelector('.navbar').outerHTML +
-                      document.querySelector('.container').outerHTML +
-                      document.querySelector('.form-container').outerHTML +
-                      document.getElementById('results').outerHTML;
-document.body.innerHTML = printContents;
-window.print();
-document.body.innerHTML = originalContents;
-location.reload();
+    const originalContents = document.body.innerHTML;
+    const printContents = document.querySelector('.navbar').outerHTML +
+                          document.querySelector('.form-container').outerHTML +
+                          document.getElementById('results').outerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+    location.reload();
 }
-

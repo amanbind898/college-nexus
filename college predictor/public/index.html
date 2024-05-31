@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEE Main College Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="navbar">
-        <h1>CollegeNexus : College Predictor 2024</h1>
-    </div>
-
-    <div class="container">
-        <p>
-            Enter your JEE Main All India Rank (AIR) to list potential colleges.
-        </p>
-        <ul>
-            <li>Uses first round JoSAA counselling data from 2023.</li>
-            <li>Currently includes data for <strong> National Institutes of Technology (NITs) OPEN category</strong> students only.</li>
-            <li>Sourced from the official JoSAA website.</li>
-        </ul>
+        <div class="left">
+            <div class="logo">
+                <h1 id="linking">College Nexus</h1>
+            </div>
+            <h2>JEE Main 2024 College Predictor</h2>
+            <p>Data Source: JoSAA (2024) 1st round</p>
+        </div>
     </div>
 
     <div class="form-container">
         <form id="predictForm">
-            <label for="rank">Enter Your AIR: </label>
-            <input type="number" id="rank" name="rank" placeholder="CRL rank">
-            <br><br>
-            <label for="gender">Gender: </label>
-            <select id="gender" name="gender" required>
-                <option value="Gender-Neutral">Male (Gender-Neutral)</option>
-                <option value="Female-only (including Supernumerary)">Female</option>
-            </select><br><br>
-            <label for="seatType">Seat Type: </label>
-            <select id="seatType" name="seatType" required>
-                <option value="OPEN">OPEN</option>
-                <option value="EWS">EWS</option>
-                <option value="OPEN (PwD)">Open-PwD</option>
-                <option value="OBC-NCL">OBC-NCL</option>
-                <option value="OBC-NCL (PwD)">OBC-NCL (PwD)</option>
-                <option value="SC">SC</option>
-                <option value="SC (PwD)">SC-PwD</option>
-                <option value="ST">ST</option>
-                <option value="ST (PwD)">ST-PwD</option>
-            </select><br><br>
-            <button type="button" onclick="predictCollege()">Predict College</button>
-            <br>
-            <div id="printButtonContainer"></div>
+            <div class="form-group">
+                <label for="rank">Your Rank</label>
+                <input type="number" id="rank" name="rank" placeholder="Enter Your Rank">
+            </div>
+            <div class="form-group">
+                <label for="seatType">Your Category</label>
+                <select id="seatType" name="seatType">
+                    <option value="OPEN">OPEN</option>
+                    <option value="OPEN (PwD)">Open-PwD</option>
+                    <option value="OBC-NCL">OBC-NCL</option>
+                    <option value="OBC-NCL (PwD)">OBC-NCL-PwD</option>
+                    <option value="SC">SC</option>
+                    <option value="SC (PwD)">SC-PwD</option>
+                    <option value="ST">ST</option>
+                    <option value="ST (PwD)">ST-PwD</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="collegeType">Type of College</label>
+                <select id="collegeType" name="collegeType">
+                    <option value="NIT">National Institute of Technology</option>
+                    <!-- Add other college types here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Select Gender</label>
+                <div>
+                    <input type="radio" id="genderNeutral" name="gender" value="Gender-Neutral" checked>
+                    <label for="genderNeutral">Gender-Neutral</label>
+                    <input type="radio" id="femaleOnly" name="gender" value="Female-only (including Supernumerary)">
+                    <label for="femaleOnly">Female-only (including Supernumerary)</label>
+                </div>
+            </div>
+            <button type="button" onclick="predictCollege()">Predict My Colleges</button>
         </form>
-      
     </div>
 
-    <div id="spinner" class="spinner">
-        Loading...  <img src="/loading.gif" alt="Loading...">
+    <div id="spinner" class="spinner" style="display:none;">
+        <img src="/loading.gif" alt="Loading..."> Loading...
     </div>
-
+    <div id="printButtonContainer"></div>
     <h2 id="eligibleCount"></h2>
     <h2>Eligible Colleges: (NITs)</h2>
     <ul id="results"></ul>
 
     <div class="footer">
-        &copy; 2024 CollegeNexus by Aman Bind.<br> All rights reserved.
+        &copy; 2024 College Nexus by Aman Bind. All rights reserved.
     </div>
 
     <script src="script.js"></script>
