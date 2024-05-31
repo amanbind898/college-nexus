@@ -46,8 +46,8 @@ app.use(express.static('public'));
 app.use(cors());
 
 app.post('/predict', (req, res) => {
-  const { rank, gender, seatType } = req.body;
-  console.log('Received data:', { rank, seatType,collegeType, gender});
+  const { rank, gender, seatType ,collegeType} = req.body;
+  console.log('Received data:', { rank, seatType ,collegeType , gender});
 
   if (!rank || !gender || !seatType) {
     return res.status(400).json({ error: 'All fields are required' });
