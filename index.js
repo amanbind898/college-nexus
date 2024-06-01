@@ -9,23 +9,22 @@ const PORT = process.env.PORT || 3000;
 
 let collegeData = [];
 
-// Construct the absolute path to the CSV file
-const csvFilePath = path.join(__dirname, 'NIT.csv');
+const csvFilePath = path.join(__dirname, 'NITall.csv'); 
 
 fs.createReadStream(csvFilePath)
   .pipe(csv())
   .on('data', (row) => {
-    // Clean up the row by removing extra spaces and quotes
     const cleanedRow = {};
     for (const key in row) {
-      cleanedRow[key.trim().replace(/^"|"$/g, '')] = row[key].trim().replace(/^"|"$/g, '');
+      // Remove extra double quotes from keys and values
+      const cleanedKey = key.trim().replace(/^"|"$/g, '');
+      const cleanedValue = row[key].trim().replace(/^"|"$/g, '');
+      cleanedRow[cleanedKey] = cleanedValue;
     }
 
-    // Parse ranks as integers
     const openingRank = parseInt(cleanedRow['Opening Rank']);
     const closingRank = parseInt(cleanedRow['Closing Rank']);
 
-    // Validate ranks and add to collegeData if valid
     if (!isNaN(openingRank) && !isNaN(closingRank)) {
       collegeData.push({
         ...cleanedRow,
@@ -44,15 +43,16 @@ fs.createReadStream(csvFilePath)
     console.error('Error reading CSV file:', err);
   });
 
+
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cors());
 
 app.post('/predict', (req, res) => {
-  const { rank, category, gender, seatType, collegeType } = req.body;
-  console.log('Received data:', { rank, category, gender, seatType, collegeType });
+  const { rank, seatType, gender, collegeType } = req.body;
+  console.log('Received data:', { rank, seatType, gender, collegeType });
 
-  if (!rank || !category || !gender || !seatType || !collegeType) {
+  if (!rank || !seatType || !gender || !collegeType) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
@@ -61,17 +61,25 @@ app.post('/predict', (req, res) => {
   const eligibleColleges = collegeData.filter(college => {
     const openingRank = college['Opening Rank'];
     const closingRank = college['Closing Rank'];
-    return (
+    const isEligible = (
       rankInt >= openingRank &&
-      rankInt <= closingRank &&
-      college['Gender'] === gender &&
-      college['Seat Type'] === category &&
-      college['Institute Type'] === collegeType 
+       rankInt <= closingRank &&
+      
+       college['Gender'] === gender &&
+       college['Seat Type'] === seatType &&  
+       college['Institute Type'] === collegeType // Ensure Institute Type matches
     );
+    if (isEligible) {
+      console.log('Found eligible college:', college);
+    }
+    return isEligible;
   });
 
+  console.log('Eligible colleges:', eligibleColleges);
   res.json({ eligibleColleges });
 });
+
+  
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

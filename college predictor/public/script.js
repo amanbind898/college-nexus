@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function predictCollege() {
     const rank = document.getElementById('rank').value;
     const seatType = document.getElementById('seatType').value;
-    // const branch = document.getElementById('branch').value;
-    // const state = document.getElementById('state').value;
     const collegeType = document.getElementById('collegeType').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
 
@@ -36,7 +34,6 @@ function predictCollege() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ rank, seatType,collegeType, gender })
-        // body: JSON.stringify({ rank, category, collegeType, gender })
     })
     .then(response => {
         if (!response.ok) {
@@ -78,13 +75,4 @@ function predictCollege() {
 
 
 
-function printResults() {
-    const originalContents = document.body.innerHTML;
-    const printContents = document.querySelector('.navbar').outerHTML +
-                          document.querySelector('.form-container').outerHTML +
-                          document.getElementById('results').outerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-    location.reload();
-}
+
