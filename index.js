@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 let collegeData = [];
 
-const csvFilePath = path.join(__dirname, 'NITall.csv'); 
+const csvFilePath = path.join(__dirname, 'NIT.csv'); 
 
 fs.createReadStream(csvFilePath)
   .pipe(csv())
