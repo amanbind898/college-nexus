@@ -37,6 +37,15 @@ body {
 .navbar p {
     font-size: 0.9rem;
 }
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo:hover {
+    color: #fddd60;
+    cursor: pointer;
+}
 
 .form-container {
     max-width: 960px;
@@ -187,7 +196,11 @@ button:hover {
     font-size: 1rem;
     font-weight: bold;
 }
-
+.faq-question:hover {
+    background-color: #cdc49d;
+    transform: scale(1.02);
+    transition: all 0.3s;
+}
 .faq-answer {
     display: none;
     padding: 10px;
@@ -201,5 +214,6 @@ button:hover {
 /* JavaScript to toggle FAQ answers */
 .faq-question.active + .faq-answer {
     display: block;
+    transition: all 0.3s;
 }
 

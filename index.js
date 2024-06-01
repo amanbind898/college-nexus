@@ -69,13 +69,11 @@ app.post('/predict', (req, res) => {
        college['Seat Type'] === seatType &&  
        college['Institute Type'] === collegeType // Ensure Institute Type matches
     );
-    if (isEligible) {
-      console.log('Found eligible college:', college);
-    }
+   
     return isEligible;
   });
 
-  console.log('Eligible colleges:', eligibleColleges);
+
   res.json({ eligibleColleges });
 });
 

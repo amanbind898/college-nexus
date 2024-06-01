@@ -1,8 +1,16 @@
 console.log("script started");
 document.addEventListener('DOMContentLoaded', () => {
+    const icon = document.querySelector('.logo');
+    icon.addEventListener('click', () => {
+        location.href = "/index.html";
+       
+
+    }
+    );
     const faqItems = document.querySelectorAll('.faq-question');
 
     faqItems.forEach(item => {
+        
         item.addEventListener('click', () => {
             item.classList.toggle('active');
             const answer = item.nextElementSibling;
@@ -13,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 });
 
 function predictCollege() {
