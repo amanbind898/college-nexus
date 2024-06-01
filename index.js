@@ -64,10 +64,9 @@ app.post('/predict', (req, res) => {
     return (
       rankInt >= openingRank &&
       rankInt <= closingRank &&
-      college['Quota'] === category && // Ensure the category matches the quota
       college['Gender'] === gender &&
-      college['Seat Type'] === seatType &&
-      college['Institute Type'] === collegeType // Filter by college type
+      college['Seat Type'] === category &&
+      college['Institute Type'] === collegeType 
     );
   });
 
