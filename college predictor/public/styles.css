@@ -51,7 +51,7 @@ body {
     max-width: 960px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fddd60;
+    background-color: #007bff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -90,16 +90,18 @@ body {
 button {
     width: 100%;
     padding: 15px;
-    background-color: #007bff;
-    color: white;
+    background-color: #00ff44ea;
+    color: rgb(25, 14, 14);
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #129c37;
+    color: white;
 }
 /* make h2 center */
 #cntr h2 {
@@ -155,7 +157,7 @@ border-radius:10%;}
     .form-container {
         margin-top: 0;
         padding: 20px;
-        background-color: #fddd60;
+    
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -196,7 +198,7 @@ border-radius:10%;}
 }
 
 .faq-question {
-    background-color: #fddd60;
+    background-color: #007bffe3;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
