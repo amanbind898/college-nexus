@@ -90,18 +90,26 @@ body {
 button {
     width: 100%;
     padding: 15px;
-    background-color: #00ff44ea;
+    background-color: #fddd60;
     color: rgb(25, 14, 14);
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
-    background-color: #129c37;
-    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02);
+    transition: all 0.3s;
+    background-color: #e9c32b;
+    color: #1E2A38;
+}
+button:active {
+    transform: scale(1);
+
 }
 /* make h2 center */
 #cntr h2 {
