@@ -64,6 +64,7 @@ function predictCollege() {
             data.eligibleColleges.forEach(college => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
+                <strong id="rd">${college['Institute Type']}</strong>
                     <strong>${college['Institute']}</strong> - ${college['Academic Program Name']}
                     <br>Quota: ${college['Quota']}
                     <br>Seat Type: ${college['Seat Type']}

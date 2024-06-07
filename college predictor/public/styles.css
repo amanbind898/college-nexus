@@ -121,6 +121,13 @@ button:hover {
     background-color: #f9f9f9;
 }
 
+#rd
+{
+background-color:red;
+width:100%;
+padding:2px;
+color:yellow;
+border-radius:10%;}
 .spinner {
     display: none;
     position: fixed;

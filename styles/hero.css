@@ -11,6 +11,7 @@
 
 #large-header {
 	background-image: url('/assets/galaxy.jpg');
+	background-size: auto;
 }
 
 .main-title {

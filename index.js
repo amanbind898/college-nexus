@@ -67,7 +67,10 @@ app.post('/predict', (req, res) => {
       
        college['Gender'] === gender &&
        college['Seat Type'] === seatType &&  
-       college['Institute Type'] === collegeType // Ensure Institute Type matches
+       (collegeType === 'all' || college['College Type'] === collegeType)
+       
+
+    
     );
    
     return isEligible;
