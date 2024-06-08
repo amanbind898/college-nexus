@@ -4,6 +4,9 @@
     <title>JEE Main College Predictor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
     
 </head>
 <body>
@@ -20,8 +23,11 @@
     <div class="form-container">
         <form id="predictForm">
             <div class="form-group">
-                <label for="rank">Your Rank</label>
-                <input type="number" id="rank" name="rank" placeholder="Enter Your Rank">
+                <!-- enter category rank if choosing category -->
+                
+                <label for="rank">Your Rank :</label>
+
+                <input type="number" id="rank" name="rank" placeholder="Enter Your Rank ">
             </div>
             <div class="form-group">
                 <label for="seatType">Your Category</label>
@@ -47,7 +53,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="gender">Select Gender</label>
+                <label for="gender">Select Gender :</label>
                 <div>
                     <input type="radio" id="genderNeutral" name="gender" value="Gender-Neutral" checked>
                     <label for="genderNeutral">Gender-Neutral</label>
@@ -101,15 +107,47 @@
             <div class="faq-item">
                 <h3 class="faq-question">What if I encounter issues using the tool?</h3>
                 <div class="faq-answer">
-                    <p>If you encounter any issues or have any questions, please contact us at support@collegenexus.com.</p>
+                    <p>If you encounter any issues or have any questions, please contact us at infincodes@gmail.com </p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        &copy; 2024 College Nexus by Aman Bind. All rights reserved.
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>College Nexus is your ultimate guide to finding the best colleges and programs. 
+                    <br>
+                    Stay connected with us for the latest updates and information.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="https://college-nexus.onrender.com/#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+           
+            <div class="footer-section social-icons">
+                <h3>Follow us on:</h3>
+                <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/infincodes/" class="icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/aman-bind-306152289" class="icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 College Nexus by Aman Bind. All rights reserved.
+        </div>
     </div>
+    
+    
+    
 
     <script src="script.js"></script>
 </body>

@@ -65,13 +65,14 @@ function predictCollege() {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                 <strong id="rd">${college['Institute Type']}</strong>
-                    <strong>${college['Institute']}</strong> - ${college['Academic Program Name']}
-                    <br>Quota: ${college['Quota']}
-                    <br>Seat Type: ${college['Seat Type']}
-                    <br>Gender: ${college['Gender']}
-                    <br>Opening Rank: ${college['Opening Rank']}
-                    <br>Closing Rank: ${college['Closing Rank']}
-                `;
+                <strong class="institute-name">${college['Institute']}</strong> - ${college['Academic Program Name']}
+                <br><span class="detail">Quota:</span> ${college['Quota']}
+                <br><span class="detail">Seat Type:</span> ${college['Seat Type']}
+                <br><span class="detail">Gender:</span> ${college['Gender']}
+                <br><span class="detail">Opening Rank:</span> ${college['Opening Rank']}
+                <br><span class="detail">Closing Rank:</span> ${college['Closing Rank']}
+            `;
+            
                 results.appendChild(listItem);
             });
         }

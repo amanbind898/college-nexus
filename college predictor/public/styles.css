@@ -129,15 +129,88 @@ button:active {
     border: 1px solid #1e1313;
     border-radius: 5px;
     background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
-#rd
-{
-background-color:red;
-width:100%;
-padding:2px;
-color:yellow;
-border-radius:10%;}
+
+
+
+/* Institute type */
+#rd {
+    color: #ffde5b; /* Same color as your radio button */
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    background-color: #9d2d2d;
+
+}
+
+
+/* Institute name */
+.institute-name {
+    background-color: #0c8430;
+    color:#fddd60;
+    padding: 0 5px;
+    border-radius: 5px;  
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Detail labels */
+.detail {
+    font-weight: bold;
+    color: #321d1d;
+}
+
+/* Breaks to separate details */
+.college-list-item br {
+    display: block;
+    margin-top: 5px;
+}
+
+
+input[type="radio"] {
+    /* Default styles */
+    width: auto;
+    margin-right: 5px;
+    border: 2px solid #e9c32b;
+    appearance: none; /* Removes default styling in modern browsers */
+    border-radius: 50%; /* Makes the border round */
+    width: 20px; /* Sets the width of the radio button */
+    height: 20px; /* Sets the height of the radio button */
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    /* Styles for checked state */
+    background-color: #e9c32b; /* Background color when checked */
+    border-color: #e9c32b; /* Border color when checked */
+}
+
+input[type="radio"]::before {
+    /* Inner circle */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px; /* Size of inner circle */
+    height: 10px; /* Size of inner circle */
+    background-color: rgb(0, 0, 0); /* Inner circle color */
+    border-radius: 50%; /* Makes the inner circle round */
+    transform: translate(-50%, -50%) scale(0); /* Centers and hides the inner circle */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for inner circle */
+}
+
+input[type="radio"]:checked::before {
+    /* Inner circle for checked state */
+    transform: translate(-50%, -50%) scale(1); /* Shows the inner circle */
+}
+
 .spinner {
     display: none;
     position: fixed;
@@ -153,6 +226,8 @@ border-radius:10%;}
     width: 20px;
     height: 20px;
 }
+
+/* Base footer styles */
 .footer {
     width: 100%;
     padding: 20px;
@@ -160,6 +235,98 @@ border-radius:10%;}
     color: white;
     text-align: center;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffde5b;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffde5b;
+}
+
+.social-icons .icon {
+    background-color: #fddd60;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #333; /* Change the color as needed */
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.1s ease;
+  }
+  
+  .social-icons .icon:hover {
+transform: scale(1.1);
+    background-color: aliceblue;
+    transition: all 0.3s;
+
+  }
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 0.8em;
+    color: #bbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
 
 @media (max-width: 768px) {
     .form-container {
