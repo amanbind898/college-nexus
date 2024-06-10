@@ -59,6 +59,9 @@ function predictCollege() {
 
         if (data.eligibleColleges.length === 0) {
             eligibleCount.innerHTML = 'No eligible colleges found for the given rank.';
+            alert('No eligible colleges found for the given rank. Redirecting to the FAQ section for more information.');
+
+            window.location.href = "#faq-section"; // Redirect to FAQ section
         } else {
             eligibleCount.innerHTML = `${data.eligibleColleges.length} eligible options found:`;
             data.eligibleColleges.forEach(college => {
