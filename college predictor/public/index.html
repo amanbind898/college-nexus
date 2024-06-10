@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JEE Main College Predictor</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Main College Predictor | College Nexus</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Use the JEE Main College Predictor by College Nexus to find out which colleges you may be eligible for based on your JEE Main rank, category, and other preferences.">
+    <meta name="keywords" content="JEE Main, College Predictor, College Nexus, JoSAA, JEE Main 2024, College Admission, Engineering Colleges, NIT, IIIT, GFTI">
+    <meta name="author" content="Aman Bind">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="JEE Main College Predictor | College Nexus">
+    <meta property="og:description" content="Use the JEE Main College Predictor by College Nexus to find out which colleges you may be eligible for based on your JEE Main rank, category, and other preferences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://college-nexus.onrender.com/">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JEE Main College Predictor | College Nexus">
+    <meta name="twitter:description" content="Use the JEE Main College Predictor by College Nexus to find out which colleges you may be eligible for based on your JEE Main rank, category, and other preferences.">
+    <meta name="twitter:image" content="http://collegenexus.com/images/college-nexus-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://college-nexus.onrender.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFAklEQVR4nO1WW2gjVRhO0QcVb+vWXfHNRdbFy7IrLD4U9EVRRBAf9kVQQVRQSSZJW5OZyd0X8dk3BVFpV2bapGnmTGaS6oKIioi4KCgLS8F2ZpJmcuaS0m21zciZbiYzk8k0affN+eCHkv7n+77/MmcmFAoQIECAAAECBAjgC4oybiGZxrM4I4fxikwQFfnNJNBOh24SUlXtEQK038IBJAhGjuDlxnNI88jEBICvp1nlaq6u7xVWNg13ZHl9iwTqSpJpnBqXO1ZuPpxi1W9yvHbdixtppqvKVZKBr41tHC/Ds+mquuZF7BX5WqdLgnbx4ghdy142biVZZSlX17uj8qc4dS0B4BMjmU8B+Gquru+OSm6PDKeux5f1yWHcyaJ2fJzGFOzTrum7aCN8zRMMfBl18zACvUhzmpa93HxgoPN850SG09SjcOdqnS7BKq94j7bWejDL6/8MP6x305wKU1VVSnPaZr7e8ZmEruIrjZM9bvQ3+s23w7y2leHVjewB3Mgj8jpQAFlVfvIenbabrLQ/iVF/327Px1nxUQLAX/MHFOFnPo/2u6r8nlhSzjtWjVGPpVg4P+zySAHlR4d5fLl1xqvqDKdexyvS435rhwP1o/yKd8eQ8eHmOwYO4Mf+3O2pXE3fGThb7xiOa5wE8JJHUnem3J7yE7DOMzCZr4++y8gAwUJyFO5kZePFgkeDCADnraQ0p0oHjukA4JX29ChFIPOJ5dbsONwkq/42eFmokpWQ4wfHlDzECwQH7Q/8HkCz8wDi4/ISVRgZuFR4fcdWofKv++FKzqnHxhWyivAYOfqNYOTsYTjJsvKQm49k4a6VkCi3tt0J4a/kuw8jRgAt7zUFswCg5A/DmeW2z7j5kGcrIUZL19yis+WNi+MK4axSsD9wGU4zwzkFOPYUcBa+625GjBavWQkRSizhDHSOCMAfxhIBSs5tProgmjFQBIDpcbhTVfWK3RvOtA2MEpesBIwW3kZCOV7vPyS1Thdf1p8ZRQB1Ne9hHqP34yhFpDj4kn07kMfogmQgz1ZSfE6YxGihEy82kfG+EV7fSTAbT/sJkK4Xmd18hBK/QzGsCLwi+77IkmzrQobXrBsSFRIvNpD5TpgS73ckY5RQQELTJVREfxL5emcvBeA8vtI56eh6STmXAs7RpqqKEaUly/x7VPNOFFYRtGTm2G87klP/SC/JT9m5s5x6H8kqX+Rq/U8J5Gm62NznpoUPB6qdXWrdhVHinyghtigZJNsX6lWf5jQ1bX7MqVvO/20aiYpsrUzPfI/bXgSKxLJsninYCsnW9O10VZUzvKbbV8b8XmKVG2uDzIt/Db0h45fWT0coUekJoWmQAJrmvV5MWV4zkpW2WbDN/PeoGW7ud5aFOzBK+Lb/XEjmWcThxY1WmWShgda6zy3oUVp6zG/tQhF67WyEFlZ7h/ZHLxrxomTMlJrGTGnDmCk2HaYtAVr8Ghkdxv3G56u3YbTwpftcbFEyphGvGYi7YWo68ihxLbIoXgiNAvSAIDMYJXTdYp5BiXKYEsIhw5g4kNwwJiKUgEVosT0at9BFXqYXpRMjmXcUQq+fj9DipxFKEAe7LexhlPAzRgl4goL3jMuNlVbvxSiRxGjxF69G3dD8DHkIHRmGMRFdaJyKLghT2ILwPEatn3u/uH48dJMQnxMmo4vCk2FKfAFpIK2RphkgQIAAAQIECPA/x3+Fj+z+/7A7sgAAAABJRU5ErkJggg==" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" type="text/css" href="/styles/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer src="script.js"></script>
+
 
 
     
@@ -27,7 +57,7 @@
                 
                 <label for="rank">Your Rank :</label>
 
-                <input type="number" id="rank" name="rank" placeholder="Enter Your Rank ">
+                <input type="number" id="rank" name="rank" placeholder="Enter Your Category rank if choosing category ">
             </div>
             <div class="form-group">
                 <label for="seatType">Your Category</label>
@@ -125,10 +155,9 @@
                 <h3>Important Links</h3>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="https://college-nexus.onrender.com/#contact">Contact</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="/pages/privacypolicy.html">Privacy Policy</a></li>
                 </ul>
             </div>
            
@@ -145,6 +174,7 @@
             &copy; 2024 College Nexus by Aman Bind. All rights reserved.
         </div>
     </div>
+    
     
     
     

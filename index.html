@@ -7,6 +7,8 @@
   <title>College Nexus : College Review & Counseling</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="/styles/hero.css">
+  <link rel="stylesheet" type="text/css" href="/styles/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script defer src="js/hpscript.js"></script>
   <script defer src="js/background.js"></script>
   <script src="js/TweenLite.min.js"></script>
@@ -105,7 +107,7 @@
         <p>Ranking: Premier engineering institute in India</p>
       </div>
       <div class="college-card">
-        <img src="https://www.searchurcollege.com/exam/admin/search/gallery/college/col_334.png" alt="Indian Institutes of Information Technology">
+        <img src="https://iiitbh.ac.in/sites/default/files/2020-05/Proposed%20IIIT%20Bhagalpur%20Building1.jpg" alt="Indian Institutes of Information Technology">
         <h4>Indian Institutes of Information Technology (IIIT)</h4>
         <p>Location: Various locations in India</p>
         <p>Ranking: Renowned institute for IT education</p>
@@ -116,22 +118,51 @@
   <section id="contact">
     <div class="container">
       <h3>Contact Us</h3>
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Submit</button>
-      </form>
+      <form class="contact-form-container" action="https://docs.google.com/forms/d/e/1FAIpQLScakbAjW-Nk-kpQCS493lTNDHnvxW8089cefqEaKwezyDbpxA/formResponse" method="POST">
+        <input type="text" id="name" name="entry.1534637990" placeholder="Your Name">
+        <input type="email" id="email" name="entry.1561982363" placeholder="Your Email">
+        <textarea id="ymessage" name="entry.249748279" placeholder="Your Message"></textarea>
+        
+        <!-- Hidden input to identify the website -->
+        <input type="hidden" id="websiteIdentifier" name="entry.940022406" value="college-nexus">
+    
+        <button type="submit" class="contact__btn">Submit</button>
+    </form>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 College Nexus : college Reviews & Counseling. All rights reserved.
-        created with ❤️ by Aman Bind.
-      </p>
+  <div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>College Nexus is your ultimate guide to finding the best colleges and programs. 
+                <br>
+                Stay connected with us for the latest updates and information.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Important Links</h3>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="https://college-nexus.onrender.com/#contact">Contact</a></li>
+                <li><a href="/pages/privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+       
+        <div class="footer-section social-icons">
+            <h3>Follow us on:</h3>
+            <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/infincodes/" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/aman-bind-306152289" class="icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        
     </div>
-  </footer>
+    <div class="footer-bottom">
+        &copy; collegeNexus created with ❤️ by Aman Bind. All rights reserved.
+    </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>
