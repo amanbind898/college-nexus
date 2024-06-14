@@ -82,6 +82,10 @@ app.post('/predict', (req, res) => {
 
   
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+setInterval(() => {
+  console.log('Pinging server to keep it awake');
+  fetch(`https://college-nexus-lxtq.onrender.com/predict`)
+    .then(res => res.text())
+    .then(body => console.log('Pinged server, response:', body))
+    .catch(err => console.error('Error pinging server:', err));
+}, 50000);
