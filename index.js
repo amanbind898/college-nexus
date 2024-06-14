@@ -88,4 +88,4 @@ setInterval(() => {
     .then(res => res.text())
     .then(body => console.log('Pinged server, response:', body))
     .catch(err => console.error('Error pinging server:', err));
-}, 50000);
+}, 1500000);
