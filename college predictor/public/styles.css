@@ -304,3 +304,33 @@ input[type="radio"]:checked::before {
     transition: all 0.3s;
 }
 
+/* probability tag added by Poonam Mahawar */
+.probability-tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.very-high-probability {
+    background-color: green;
+    color: white;
+}
+
+.high-probability {
+    background-color: lightgreen;
+    color: black;
+}
+
+.medium-probability {
+    background-color: orange;
+    color:rgb(246, 233, 209);
+}
+
+.low-probability {
+    background-color: red;
+    color: rgb(255, 218, 197);
+}
+
+
