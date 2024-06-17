@@ -138,13 +138,12 @@ button:active {
 
 /* Institute type */
 #rd {
-    color: #ffde5b; /* Same color as your radio button */
+    color: #ddd;
     font-size: 1.2em;
     font-weight: bold;
-    margin-left: 10px;
     padding: 0px 5px;
     border-radius: 5px;
-    background-color: #9d2d2d;
+    background-color: #333;
 
 }
 
@@ -152,18 +151,22 @@ button:active {
 /* Institute name */
 .institute-name {
     color:#086724;
-    padding: 0 5px;
     border-radius: 5px;  
     font-size: 1.1em;
     font-weight: bold;
-    margin-left: 10px;
 }
 
 /* Detail labels */
-.detail {
+.branch {
     font-weight: bold;
+    color: #1e1313;
+    background-color: #fddd605c;
+}
+.detail {
+    font-weight:500;
     color: #321d1d;
 }
+
 
 /* Breaks to separate details */
 .college-list-item br {

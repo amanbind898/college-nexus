@@ -126,14 +126,15 @@ function displayResults(colleges, userRank, domicile, collegeType) {
 
 function createCollegeListItem(college, userRank) {
     const listItem = document.createElement('li');
+    listItem.className = 'college-list-item';
     listItem.innerHTML = `
-        <strong>${college['Institute Type']}</strong> - ${college['Institute']}
-        <br>${college['Academic Program Name']}
-        <br>Quota: ${college['Quota']}
-        <br>Seat Type: ${college['Seat Type']}
-        <br>Gender: ${college['Gender']}
-        <br>Opening Rank: ${college['Opening Rank']}
-        <br>Closing Rank: ${college['Closing Rank']}
+        <strong id="rd">${college['Institute Type']}</strong> - <span class="institute-name">${college['Institute']}</span>
+        <br><span class="branch">${college['Academic Program Name']}</span>
+        <br><span class="detail">Quota: ${college['Quota']}</span>
+        <br><span class="detail">Seat Type: ${college['Seat Type']}</span>
+        <br><span class="detail">Gender: ${college['Gender']}</span>
+        <br><span class="detail">Opening Rank: ${college['Opening Rank']}</span>
+        <br><span class="detail">Closing Rank: ${college['Closing Rank']}</span>
     `;
 
     const probabilityTag = document.createElement('span');
