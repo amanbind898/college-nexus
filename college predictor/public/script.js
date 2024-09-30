@@ -90,7 +90,7 @@ function displayResults(colleges, userRank, domicile, collegeType) {
         const otherStateColleges = colleges.filter(college => !(college['Quota'] === 'HS' && college['State'] === domicile));
         
         
-        eligiblemsg.innerHTML = `Showing ${colleges.length} eligible options. The data is taken from the official JoSAA website and is updated till 2023 round 6.<br><br>` +
+        eligiblemsg.innerHTML = `Showing ${colleges.length} eligible options. The data is taken from the official JoSAA website and is updated till 2024 round 5.<br><br>` +
         `Please note:<br>` +
         `1. Since you have selected your home state (domicile) as ${domicile}, only HOME STATE (HS) quota colleges in ${domicile} are shown first. HS quota for other states is not displayed.<br>` +
         `2. If you do not see any colleges in your home state, it means you're not eligible for the colleges as per applied filters and CRL under HS quota. Eligible colleges from other states will be displayed if any.`;
